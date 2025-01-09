@@ -1,0 +1,20 @@
+lzc-sdk-version: '0.1'
+name: Redis
+package: shiina.lzcapp.redis
+version: 1.0.0
+application:
+  routes:
+    - /=http://redis.shiina.lzcapp.redis.lzcapp:6379
+  subdomain: redis
+  ingress:
+    - protocol: tcp
+      port: 6379
+      service: redis
+services:
+  redis:
+    image: dev.prometheus17th.heiyu.space/lzc/redis:latest
+    container_name: redis
+    ports:
+      - 6379:6379
+    binds:
+      - /lzcapp/var/redis-data:/data
