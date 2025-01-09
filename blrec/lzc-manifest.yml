@@ -12,7 +12,7 @@ application:
       service: blrec
 services:
   blrec:
-    image: dev.prometheus17th.heiyu.space/lzc/blrec:latest
+    image: registry.lazycat.cloud/u12914963/acgnhiki/blrec:539a20d83ba06d67
     binds:
       - /lzcapp/var/config:/cfg
       - /lzcapp/var/log/blrec:/log
