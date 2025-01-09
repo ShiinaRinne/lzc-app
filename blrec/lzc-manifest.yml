@@ -1,0 +1,27 @@
+lzc-sdk-version: '0.1'
+name: blrec
+package: cloud.lazycat.app.blrec
+version: 1.0.0
+application:
+  routes:
+    - /=http://blrec.cloud.lazycat.app.blrec.lzcapp:2233
+  subdomain: blrec
+  ingress:
+    - protocol: tcp
+      port: 2233
+      service: blrec
+services:
+  blrec:
+    image: dev.prometheus17th.heiyu.space/lzc/blrec:latest
+    binds:
+      - /lzcapp/var/config:/cfg
+      - /lzcapp/var/log/blrec:/log
+      - /lzcapp/var/rec:/rec
+    environment:
+      - BLREC_DEFAULT_SETTINGS_FILE=/cfg/settings.toml
+      - BLREC_DEFAULT_LOG_DIR=/log
+      - BLREC_DEFAULT_OUT_DIR=/rec
+      - TZ=Asia/Shanghai
+      
+    ports:
+      - 2233
