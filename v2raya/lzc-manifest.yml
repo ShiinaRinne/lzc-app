@@ -1,0 +1,35 @@
+lzc-sdk-version: '0.1'
+name: V2rayA
+package: shiina.lzcapp.v2raya
+version: 1.0.0
+application:
+  routes:
+    - /=http://v2raya.shiina.lzcapp.v2raya.lzcapp:2017
+  subdomain: v2raya
+  ingress:
+    - protocol: tcp
+      port: 2017
+      service: v2raya
+    - protocol: tcp
+      port: 20170
+      service: v2raya
+    - protocol: tcp
+      port: 20171
+      service: v2raya
+    - protocol: tcp
+      port: 20172
+      service: v2raya
+services:
+  v2raya:
+    image: registry.lazycat.cloud/u12914963/mzz2017/v2raya:e965f1096c729469
+    binds:
+      - /lzcapp/var/v2raya:/etc/v2raya
+    environment:
+      - V2RAYA_V2RAY_BIN=/usr/local/bin/v2ray
+      - V2RAYA_LOG_FILE=/tmp/v2raya.log
+    ports:
+      - 2017
+      - 20170
+      - 20171
+      - 20172
+    
