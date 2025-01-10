@@ -1,20 +1,19 @@
 lzc-sdk-version: '0.1'
 name: Cloudreve
 package: shiina.lzcapp.cloudreve
-version: 1.0.0
+version: 1.0.1
 application:
   routes:
     - /=http://cloudreve.shiina.lzcapp.cloudreve.lzcapp:5212
   subdomain: cloudreve
-  ingress:
-    - protocol: tcp
-      port: 5212
-      service: cloudreve
 services:
   cloudreve:
-    image: registry.lazycat.cloud/u12914963/cloudreve/cloudreve:a9e2373b7ca59bc4
+    image: registry.lazycat.cloud/u12914963/dockerhub02347/cloudreve:855fc00dc671a745
     container_name: cloudreve
     binds:
       - /lzcapp/var/data:/data
       - /lzcapp/var/cloudreve/uploads:/cloudreve/uploads
       - /lzcapp/var/cloudreve/avatar:/cloudreve/avatar
+      - /lzcapp/var/cloudreve/config:/cloudreve/config
+    setup_script: |
+      ./cloudreve
