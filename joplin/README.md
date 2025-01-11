@@ -1,0 +1,1 @@
+joplin 客户端访问域名时会被懒猫的鉴权影响，所以需要访问 http://joplin.prometheus17th.heiyu.space:22300

@@ -1,0 +1,35 @@
+lzc-sdk-version: '0.1'
+name: JoplinServer
+package: shiina.lzcapp.joplinserver
+version: 1.0.0
+application:
+  routes:
+    - /=http://joplin.shiina.lzcapp.joplinserver.lzcapp:22300
+  subdomain: joplin
+  ingress:
+    - protocol: tcp
+      port: 22300
+      service: joplin
+services:
+  db:
+    image: registry.lazycat.cloud/u12914963/library/postgres:ecff22ff52f83969
+    binds:
+      - /lzcapp/var/data/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=joplin_password
+      - POSTGRES_USER=joplin
+      - POSTGRES_DB=joplin
+  joplin:
+    # image: dev.prometheus17th.heiyu.space/lzc/joplin:latest # 自己改过 invalid origin 验证的 joplin
+    image: registry.lazycat.cloud/u12914963/dockerhub02347/joplin:9cb080fbd24c33f8
+    environment:
+      - APP_PORT=22300
+      - APP_BASE_URL=https://joplin.${LAZYCAT_BOX_DOMAIN}
+      - DB_CLIENT=pg
+      - POSTGRES_PASSWORD=joplin_password
+      - POSTGRES_DATABASE=joplin
+      - POSTGRES_USER=joplin
+      - POSTGRES_PORT=5432
+      - POSTGRES_HOST=db
+    ports:
+      - 22300
