@@ -6,10 +6,6 @@ application:
   routes:
     - /=http://idle-game.shiina.lzcapp.idlegame.lzcapp:80
   subdomain: idle-game
-  ingress:
-    - protocol: tcp
-      port: 80
-      service: idle-game
 services:
   idle-game:
     image: registry.lazycat.cloud/u12914963/dockerhub02347/idlegame:52e2679b4f4f8bde
