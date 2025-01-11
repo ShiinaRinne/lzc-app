@@ -1,5 +1,5 @@
 lzc-sdk-version: '0.1'
-name: DailyHot
+name: DailyHot 今日热榜
 package: shiina.lzcapp.dailyhot
 version: 1.0.0
 application:
