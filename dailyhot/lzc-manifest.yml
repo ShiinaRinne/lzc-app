@@ -1,0 +1,14 @@
+lzc-sdk-version: '0.1'
+name: DailyHot
+package: shiina.lzcapp.dailyhot
+version: 1.0.0
+application:
+  routes:
+    - /=http://dailyhot.shiina.lzcapp.dailyhot.lzcapp:80
+  subdomain: dailyhot
+services:
+  dailyhot:
+    image: registry.lazycat.cloud/u12914963/rehiy/dailyhot:326ef3d87a940a50
+    environment:
+    ports:
+      - 80
