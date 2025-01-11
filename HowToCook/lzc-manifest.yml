@@ -1,0 +1,13 @@
+lzc-sdk-version: '0.1'
+name: HowToCook 做饭指南
+package: shiina.lzcapp.howtocook
+version: 1.0.0
+application:
+  routes:
+    - /=http://howtocook.shiina.lzcapp.howtocook.lzcapp:5000
+  subdomain: howtocook
+services:
+  howtocook:
+    image: registry.lazycat.cloud/u12914963/anduin2017/how-to-cook:8ffc712e2c291f39
+    ports:
+      - 5000
