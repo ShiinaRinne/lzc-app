@@ -1,0 +1,14 @@
+# https://github.com/shoyu3/Portable-objection
+lzc-sdk-version: '0.1'
+name: 随身异议
+package: shiina.lzcapp.portableobjection
+version: 1.0.0
+application:
+  routes:
+    - /=http://portableobjection.shiina.lzcapp.portableobjection.lzcapp:5000
+  subdomain: portableobjection
+services:
+  portableobjection:
+    image: registry.lazycat.cloud/u12914963/dockerhub02347/portable-objection:f7d1864c9548a4fb
+    ports:
+      - 5000
