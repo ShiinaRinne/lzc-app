@@ -1,0 +1,13 @@
+lzc-sdk-version: '0.1'
+name: Pokerogue
+package: shiina.lzcapp.pokerogue
+version: 1.4.2
+application:
+  routes:
+    - /=http://pokerogue.shiina.lzcapp.pokerogue.lzcapp:8000
+  subdomain: pokerogue
+services:
+  pokerogue:
+    image: registry.lazycat.cloud/u12914963/rflandau/pokerogue:b906c3b86a479188
+    ports:
+      - 8000
