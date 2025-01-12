@@ -1,0 +1,13 @@
+lzc-sdk-version: '0.1'
+name: Cook
+package: shiina.lzcapp.cook
+version: 1.2.2
+application:
+  routes:
+    - /=http://cook.shiina.lzcapp.cook.lzcapp:80
+  subdomain: cook
+services:
+  cook:
+    image: registry.lazycat.cloud/u12914963/yunyoujun/cook:ea0d780068538966
+    ports:
+      - 80
