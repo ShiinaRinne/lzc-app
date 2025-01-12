@@ -1,0 +1,13 @@
+lzc-sdk-version: '0.1'
+name: LinuxCommand
+package: shiina.lzcapp.linuxcommand
+version: 1.19.1
+application:
+  routes:
+    - /=http://linuxcommand.shiina.lzcapp.linuxcommand.lzcapp:3000
+  subdomain: linuxcommand
+services:
+  linuxcommand:
+    image: registry.lazycat.cloud/u12914963/wcjiang/linux-command:cfc898255a5de2ce
+    ports:
+      - 3000
