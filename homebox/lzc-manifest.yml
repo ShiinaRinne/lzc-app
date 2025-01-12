@@ -1,0 +1,17 @@
+lzc-sdk-version: '0.1'
+name: Homebox
+package: shiina.lzcapp.homebox
+version: 0.17.2
+application:
+  routes:
+    - /=http://homebox.shiina.lzcapp.homebox.lzcapp:7745
+  subdomain: homebox
+services:
+  homebox:
+    image: registry.lazycat.cloud/u12914963/sysadminsmedia/homebox:59f46fe4de5fd53c
+    ports:
+      - 7745
+    environment:
+      - TZ=Asia/Shanghai
+    binds:
+      - /lzcapp/var/homebox:/data
