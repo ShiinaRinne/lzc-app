@@ -1,0 +1,16 @@
+lzc-sdk-version: '0.1'
+name: Dashy
+package: shiina.lzcapp.dashy
+version: 3.1.1
+application:
+  routes:
+    - /=http://dashy.shiina.lzcapp.dashy.lzcapp:8080
+  subdomain: dashy
+services:
+  dashy:
+    image: registry.lazycat.cloud/u12914963/lissy93/dashy:c0b1b9e0d5ca51ef
+    binds:
+      - /lzcapp/var/dashy:/app/user-data
+    ports:
+      - 8080
+    setup_script: cp /lzcapp/pkg/content/conf.yml /lzcapp/var/dashy
