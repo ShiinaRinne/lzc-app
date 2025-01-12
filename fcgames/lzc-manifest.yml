@@ -1,0 +1,14 @@
+# https://gitee.com/feiyu22/jsnes
+lzc-sdk-version: '0.1'
+name: FC Games
+package: shiina.lzcapp.jsnes
+version: 1.0.0
+application:
+  routes:
+    - /=http://jsnes.shiina.lzcapp.jsnes.lzcapp:80
+  subdomain: jsnes
+services:
+  jsnes:
+    image: registry.lazycat.cloud/u12914963/jeven/jsnes:e31e11a2508f52ad
+    ports:
+      - 80
