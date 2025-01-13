@@ -2,7 +2,7 @@
 lzc-sdk-version: '0.1'
 name: 随身异议
 package: shiina.lzcapp.portableobjection
-version: 1.0.0
+version: 1.0.1
 application:
   routes:
     - /=http://portableobjection.shiina.lzcapp.portableobjection.lzcapp:5000
