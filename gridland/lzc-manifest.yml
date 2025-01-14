@@ -1,0 +1,13 @@
+lzc-sdk-version: '0.1'
+name: Gridland
+package: shiina.lzcapp.gridland
+version: 1.1.0
+application:
+  routes:
+    - /=http://gridland.shiina.lzcapp.gridland.lzcapp:5000
+  subdomain: gridland
+services:
+  gridland:
+    image: registry.lazycat.cloud/u12914963/dockerhub02347/gridland:f4229956050d6a63
+    ports:
+      - 5000
