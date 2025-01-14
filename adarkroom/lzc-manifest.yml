@@ -1,0 +1,16 @@
+lzc-sdk-version: '0.1'
+name: A Dark Room
+package: shiina.lzcapp.adarkroom
+version: 1.4
+application:
+  routes:
+    - /=http://adarkroom.shiina.lzcapp.adarkroom.lzcapp:3000
+  subdomain: adarkroom
+services:
+  adarkroom:
+    image: registry.lazycat.cloud/u12914963/dockerhub02347/adarkroom:48819f9e8cf05e21
+    ports:
+      - 3000
+unsupported_platforms:
+  - ios
+  - android
