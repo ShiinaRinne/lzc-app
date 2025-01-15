@@ -1,7 +1,7 @@
 lzc-sdk-version: '0.1'
 name: Gridland
 package: shiina.lzcapp.gridland
-version: 1.1.0
+version: 1.1.1
 application:
   routes:
     - /=http://gridland.shiina.lzcapp.gridland.lzcapp:5000
