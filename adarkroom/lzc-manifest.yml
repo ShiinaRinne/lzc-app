@@ -1,7 +1,7 @@
 lzc-sdk-version: '0.1'
 name: A Dark Room
 package: shiina.lzcapp.adarkroom
-version: 1.4
+version: 1.4.1
 application:
   routes:
     - /=http://adarkroom.shiina.lzcapp.adarkroom.lzcapp:3000
