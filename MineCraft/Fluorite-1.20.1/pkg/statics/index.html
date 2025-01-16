@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的世界 赏金猎人整合包 - 安装和使用指南</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        h1 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        code {
+            background-color: #e7e7e7;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .note {
+            background-color: #f0f0f0;
+            border-left: 4px solid #2c3e50;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>我的世界 - 赏金猎人整合包</h1>
+    
+    <h2>客户端安装指南</h2>
+    <div class="note">
+        <strong>前置需求：</strong> 请先安装 <a href="https://github.com/HMCL-dev/HMCL/releases">HMCL 启动器</a> 或 <a href="https://github.com/Hex-Dragon/PCL2" target="_blank">PCL 启动器</a>。
+        
+        以下使用 PCL 启动器为例，HMCL 启动器操作类似。
+    </div>
+
+    <ol>
+        <li class="step">
+            <h3>下载整合包</h3>
+            <p>点击此处通过懒猫下载 <a href="./assets/client.zip">赏金猎人整合包</a></p> 
+        </li>
+        <li class="step">
+            <h3>导入整合包</h3>
+            <p>打开 PCL 启动器，按照以下步骤操作：</p> 
+            <ol>
+                <li>点击 "版本选择"</li>
+                <li>选择 "导入整合包"</li>
+                <li>选择刚才下载的文件</li>
+                <li>等待安装完成</li>
+            </ol>
+            <img src="./assets/0.png" alt="选择版本" width="50%">
+            <img src="./assets/1.png" alt="导入整合包" width="50%">
+            <img src="./assets/2.png" alt="等待安装" width="50%">
+        </li>
+        <li class="step">
+            <h3>连接服务器</h3>
+            <p>启动游戏后，按以下步骤连接服务器：</p>
+            <ol>
+                <li>点击 "多人游戏"</li>
+                <li>选择 "直接连接"</li>
+                <li>输入服务器地址：<code>fluorite.${hostname}.heiyu.space</code></li>
+                <li>点击 "加入服务器"</li>
+            </ol>
+            <p><strong>注意：</strong> 请将 <code>${hostname}</code> 替换为您的实际服务器域名。</p>
+            <img src="./assets/3.png" alt="多人游戏" width="50%">
+            <img src="./assets/4.png" alt="直接连接" width="50%">
+            <img src="./assets/5.png" alt="输入服务器地址" width="50%">
+        </li>
+    </ol>
+
+    <h2>服务器配置文件</h2>
+    <p>您可以在懒猫网盘中找到并修改服务器的配置文件：</p>
+    <p><a href="https://file.${hostname}.heiyu.space/#/file/appdata?path=/shiina.lzcapp.minecraftfluorite/data" target="_blank">https://file.${hostname}.heiyu.space/#/file/appdata?path=/shiina.lzcapp.minecraftfluorite/data</a></p>
+
+    <div class="note">
+        <strong>提示：</strong> 修改配置文件后，可能需要重启服务器才能生效。<br>
+        首次打开生成世界会比较慢，请耐心等待 1~2 分钟~
+    </div>
+
+    <!-- 如果需要 op 权限，请通过 lzc docker ps | grep fluorite 获取容器 ID，然后使用 lzc docker attach [容器 ID] 进入容器，使用 'op [玩家名]' 添加 op 权限。  -->
+    <!-- 或者直接修改网盘中的 ops.json 文件。 -->
+
+
+    <!-- <h2>故障排除</h2>
+    <ul>
+        <li>如果服务器无法启动，请使用以下命令检查日志：<code>lzc docker logs [容器ID] </code></li>
+        <li>确保数据目录具有正确的权限。</li>
+    </ul> -->
+</body>
+</html>

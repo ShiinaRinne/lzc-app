@@ -1,0 +1,25 @@
+lzc-sdk-version: '0.1'
+name: 我的世界-赏金猎人
+package: shiina.lzcapp.minecraftfluorite
+version: 1.0.0
+application:
+  routes:
+    - /=http://fluorite.shiina.lzcapp.minecraftfluorite.lzcapp:3000
+  subdomain: fluorite
+  ingress:
+    - protocol: tcp
+      port: 25565
+      service: fluorite
+services:
+  fluorite:
+    image: registry.lazycat.cloud/u12914963/dockerhub02347/minecraft-server-fluorite-1.20.1:58c3b5ed119935c0
+    binds:
+      - /lzcapp/var/data:/app/data
+    ports:
+      - 25565:25565
+      - 3000:3000
+    setup_script: |
+      mkdir -p /app/data
+      if [ ! -f /app/data/Fluorite-1.20.1-225413d-server.jar ]; then
+        cp -r /app/server/* /app/data/
+      fi
