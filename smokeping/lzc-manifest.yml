@@ -1,0 +1,22 @@
+# https://github.com/linuxserver/docker-smokeping
+lzc-sdk-version: '0.1'
+name: Smokeping
+package: shiina.lzcapp.smokeping
+version: 1.0.0
+application:
+  routes:
+    - /=http://smokeping.shiina.lzcapp.smokeping.lzcapp:80
+  subdomain: smokeping
+services:
+  smokeping:
+    image: registry.lazycat.cloud/u12914963/linuxserver/smokeping:58c47cd4c00906ad
+    binds:
+      - /lzcapp/var/config:/config
+      - /lzcapp/var/data:/data
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - CACHE_DIR=/tmp
+    ports:
+      - 80:80
