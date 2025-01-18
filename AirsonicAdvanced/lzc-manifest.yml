@@ -1,0 +1,26 @@
+# https://github.com/linuxserver/docker-krita
+lzc-sdk-version: '0.1'
+name: AirsonicAdvanced
+package: shiina.lzcapp.airsonicadvanced
+version: 1.0.0
+application:
+  routes:
+    - /=http://airsonic-advanced.shiina.lzcapp.airsonicadvanced.lzcapp:4040
+  subdomain: airsonic-advanced
+services:
+  airsonic-advanced:
+    image: registry.lazycat.cloud/u12914963/linuxserver/airsonic-advanced:f42256d0a3181abd
+    binds:
+      - /lzcapp/var/config:/config
+      - /lzcapp/var/music:/music
+      - /lzcapp/var/playlists:/playlists
+      - /lzcapp/var/podcasts:/podcasts
+      - /lzcapp/var/media:/media
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - CONTEXT_PATH=
+      - JAVA_OPTS=
+    ports:
+      - 4040:4040
