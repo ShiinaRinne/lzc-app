@@ -1,0 +1,22 @@
+# https://github.com/linuxserver/docker-krita
+lzc-sdk-version: '0.1'
+name: Krita
+package: shiina.lzcapp.krita
+version: 1.0.0
+application:
+  routes:
+    - /=http://krita.shiina.lzcapp.krita.lzcapp:3000
+  subdomain: krita
+services:
+  krita:
+    image: registry.lazycat.cloud/u12914963/linuxserver/krita:2e818a17c968bf52
+    binds:
+      - /lzcapp/var/config:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    ports:
+      - 3000:3000
+      - 3001:3001
+    # setup_script: echo "security-opt seccomp=unconfined" >> /etc/docker/daemon.json && systemctl restart docker
