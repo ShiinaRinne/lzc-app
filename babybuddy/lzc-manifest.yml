@@ -1,0 +1,20 @@
+lzc-sdk-version: '0.1'
+name: BabyBuddy
+package: shiina.lzcapp.babybuddy
+version: 1.0.0
+application:
+  routes:
+    - /=http://babybuddy.shiina.lzcapp.babybuddy.lzcapp:8000
+  subdomain: babybuddy
+services:
+  babybuddy:
+    image: registry.lazycat.cloud/u12914963/linuxserver/babybuddy:19e7ab9b6457657d
+    binds:
+      - /lzcapp/var/config:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      - CSRF_TRUSTED_ORIGINS=http://127.0.0.1:8000,https://babybuddy.${LAZYCAT_BOX_DOMAIN}
+    ports:
+      - 8000:8000
