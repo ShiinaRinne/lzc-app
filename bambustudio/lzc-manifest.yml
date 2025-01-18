@@ -1,0 +1,29 @@
+# https://github.com/linuxserver/docker-bambustudio
+lzc-sdk-version: '0.1'
+name: BambuStudio
+package: shiina.lzcapp.bambustudio
+version: 1.0.0
+application:
+  routes:
+    - /=http://bambustudio.shiina.lzcapp.bambustudio.lzcapp:3000
+  subdomain: bambustudio
+  ingress:
+    - protocol: tcp
+      port: 3001
+      service: bambustudio
+services:
+  bambustudio:
+    image: registry.lazycat.cloud/u12914963/linuxserver/bambustudio:255bde46750d598a
+    binds:
+      - /lzcapp/var/config:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - DARK_MODE=true
+    ports:
+      - 3000:3000
+      - 3001:3001
+unsupported_platforms:
+  - ios
+  - android
