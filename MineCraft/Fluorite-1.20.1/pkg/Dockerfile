@@ -8,12 +8,12 @@ RUN apt-get update && apt-get install -y curl && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-
-COPY statics/assets /app/statics/assets
-COPY server /app/server
-
 RUN mkdir -p /app/data
 
+COPY statics/resources /app/statics/resources
+COPY server /app/server
+
+COPY statics/assets /app/statics/assets
 COPY statics/index.html /app/statics/index.html
 
 EXPOSE 25565 3000
