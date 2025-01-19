@@ -1,7 +1,7 @@
 lzc-sdk-version: '0.1'
 name: 我的世界-龙之冒险
 package: shiina.lzcapp.minecraftdragonadventure
-version: 1.0.0
+version: 1.0.1
 application:
   routes:
     - /=http://dragonadventure.shiina.lzcapp.minecraftdragonadventure.lzcapp:3000
@@ -12,7 +12,7 @@ application:
       service: dragonadventure
 services:
   dragonadventure:
-    image: registry.lazycat.cloud/u12914963/dockerhub02347/minecraftdragonadventure:0770949b372287bc
+    image: registry.lazycat.cloud/u12914963/dockerhub02347/minecraftdragonadventure:931cd59caff8640f
     binds:
       - /lzcapp/var/data:/app/data
     ports:

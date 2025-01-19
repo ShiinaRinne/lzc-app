@@ -3,104 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的世界 龙之冒险 - 安装和使用指南</title>
-    <style>
-        body {
-            font-family: "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        h1 {
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 10px;
-        }
-        code {
-            background-color: #e7e7e7;
-            padding: 2px 4px;
-            border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .note {
-            background-color: #f0f0f0;
-            border-left: 4px solid #2c3e50;
-            padding: 10px;
-            margin: 10px 0;
-        }
-    </style>
+    <title>我的世界 龙之冒险整合包 - 简易安装指南</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    <h1>我的世界 - 龙之冒险整合包</h1>
-    
-    <h2>客户端安装指南</h2>
-    <div class="note">
-        <strong>前置需求：</strong> 请先安装 <a href="https://github.com/HMCL-dev/HMCL/releases">HMCL 启动器</a> 或 <a href="https://github.com/Hex-Dragon/PCL2" target="_blank">PCL 启动器</a>。
+    <div class="container">
+        <h1>我的世界 - 龙之冒险整合包安装指南</h1>
         
-        以下使用 PCL 启动器为例，HMCL 启动器操作类似。
-    </div>
+        <h2>1. 下载整合包</h2>
+        <div class="step">
+            <div class="note">
+                <p><strong>新手推荐：</strong><a href="./resources/client-all.zip">点击这里下载完整整合包</a></p>
+                <p>包含启动器和所有必要文件，解压后打开即可使用，非常方便！</p>
+                <p><strong>进阶用户：</strong><a href="./resources/client.zip">点击这里下载仅包含资源文件的整合包</a></p>
+                <p>适合已安装 PCL 或 HMCL 启动器的玩家，需要手动导入整合包并等待下载资源文件。</p>
+            </div>
+        </div>
 
-    <ol>
-        <li class="step">
-            <h3>下载整合包</h3>
-            <p>点击此处通过懒猫下载 <a href="./assets/client.zip">龙之冒险整合包</a></p> 
-            仅在使用浏览器打开此页面时，可触发浏览器自带下载，出现下载进度显示。<br>
-            若是在懒猫内部打开则无进度显示，请耐心等待下载完成。
-        </li>
-        <li class="step">
-            <h3>导入整合包</h3>
-            <p>打开 PCL 启动器，按照以下步骤操作：</p> 
+        <h2>2. 安装整合包</h2>
+        <div class="step">
+            <h3>完整整合包（新手推荐）</h3>
             <ol>
+                <li>解压下载的 <code>client-all.zip</code> 文件到任意文件夹</li>
+                <li>双击解压出的启动器程序（如 PCL.exe）</li>
+                <li>等待启动器加载完成</li>
+            </ol>
+            <h3>仅资源文件整合包（进阶用户）</h3>
+            <p>以 PCL 启动器为例：</p>
+            <ol>
+                <li>打开 PCL 启动器</li>
                 <li>点击 "版本选择"</li>
                 <li>选择 "导入整合包"</li>
-                <li>选择刚才下载的文件</li>
+                <li>选择下载的 <code>client.zip</code> 文件</li>
                 <li>等待安装完成</li>
             </ol>
-            <img src="./assets/0.png" alt="选择版本" width="50%">
-            <img src="./assets/1.png" alt="导入整合包" width="50%">
-            <img src="./assets/2.png" alt="等待安装" width="50%">
-        </li>
-        <li class="step">
-            <h3>连接服务器</h3>
-            <p>启动游戏后，按以下步骤连接服务器：</p>
+            <img src="./assets/0.png" alt="选择版本">
+            <img src="./assets/1.png" alt="导入整合包">
+            <img src="./assets/2.png" alt="等待安装">
+        </div>
+
+        <h2>3. 连接服务器</h2>
+        <div class="step">
+            <h3>进入游戏世界</h3>
             <ol>
+                <li>启动游戏</li>
                 <li>点击 "多人游戏"</li>
                 <li>选择 "直接连接"</li>
-                <li>输入服务器地址：<code>dragonadventure.${hostname}.heiyu.space</code></li>
+                <li>输入服务器地址：<code id="serverAddress">dragonadventure.[hostname].heiyu.space</code></li>
                 <li>点击 "加入服务器"</li>
             </ol>
-            <p><strong>注意：</strong> 请将 <code>${hostname}</code> 替换为您的实际服务器域名。</p>
-            <img src="./assets/3.png" alt="多人游戏" width="50%">
-            <img src="./assets/4.png" alt="直接连接" width="50%">
-            <img src="./assets/5.png" alt="输入服务器地址" width="50%">
-        </li>
-    </ol>
+            <img src="./assets/3.png" alt="多人游戏">
+            <img src="./assets/4.png" alt="直接连接">
+            <img src="./assets/5.png" alt="输入服务器地址">
+        </div>
 
-    <h2>服务器配置文件</h2>
-    <p>您可以在懒猫网盘中找到并修改服务器的配置文件：</p>
-    <p><a href="https://file.${hostname}.heiyu.space/#/file/appdata?path=/shiina.lzcapp.minecraftfluorite/data" target="_blank">https://file.${hostname}.heiyu.space/#/file/appdata?path=/shiina.lzcapp.minecraftfluorite/data</a></p>
-
-    <div class="note">
-        <strong>提示：</strong> 修改配置文件后，可能需要重启服务器才能生效。<br>
-        首次打开生成世界会比较慢，请耐心等待 1~2 分钟~
+        <h2>服务器配置</h2>
+        <div class="step">
+            <h3>修改服务器设置</h3>
+            <p>如需修改服务器配置，请访问以下链接：</p>
+            <p><a id="configLink" href="#" target="_blank">服务器配置文件</a></p>
+            <div class="note">
+                <strong>提示：</strong>
+                <ul>
+                    <li>修改配置后，可能需要重启服务器才能生效。</li>
+                    <li>首次进入服务器时，生成世界可能需要 1-2 分钟，请耐心等待。</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <!-- 如果需要 op 权限，请通过 lzc docker ps | grep fluorite 获取容器 ID，然后使用 lzc docker attach [容器 ID] 进入容器，使用 'op [玩家名]' 添加 op 权限。  -->
-    <!-- 或者直接修改网盘中的 ops.json 文件。 -->
-
-
-    <!-- <h2>故障排除</h2>
-    <ul>
-        <li>如果服务器无法启动，请使用以下命令检查日志：<code>lzc docker logs [容器ID] </code></li>
-        <li>确保数据目录具有正确的权限。</li>
-    </ul> -->
+    <script>
+        const hostname = window.location.hostname.split('.')[1];
+        const serverAddressElement = document.getElementById('serverAddress');
+        serverAddressElement.textContent = `dragonadventure.${hostname}.heiyu.space`;
+        const configLinkElement = document.getElementById('configLink');
+        configLinkElement.href = `https://file.${hostname}.heiyu.space/#/file/appdata?path=/shiina.lzcapp.minecraftdragonadventure/data`;
+    </script>
 </body>
 </html>
