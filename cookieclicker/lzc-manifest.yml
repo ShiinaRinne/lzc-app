@@ -1,0 +1,17 @@
+# https://github.com/ozh/cookieclicker
+lzc-sdk-version: '0.1'
+name: Cookie Clicker
+package: shiina.lzcapp.cookieclicker
+version: 1.0.0
+application:
+  routes:
+    - /=http://cookieclicker.shiina.lzcapp.cookieclicker.lzcapp:3000
+  subdomain: cookieclicker
+services:
+  cookieclicker:
+    image: registry.lazycat.cloud/u12914963/dockerhub02347/cookieclicker:3eb04557d0caeede
+    ports:
+      - 3000
+unsupported_platforms:
+  - ios
+  - android
