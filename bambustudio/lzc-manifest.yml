@@ -2,7 +2,7 @@
 lzc-sdk-version: '0.1'
 name: BambuStudio
 package: shiina.lzcapp.bambustudio
-version: 1.0.0
+version: 1.0.1
 application:
   routes:
     - /=http://bambustudio.shiina.lzcapp.bambustudio.lzcapp:3000
@@ -21,6 +21,7 @@ services:
       - PGID=1000
       - TZ=Asia/Shanghai
       - DARK_MODE=true
+      - LC_ALL=zh_CN.UTF-8
     ports:
       - 3000:3000
       - 3001:3001
