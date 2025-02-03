@@ -1,13 +1,13 @@
 lzc-sdk-version: '0.1'
 name: chinesebqb
 package: shiina.lzcapp.chinesebqb
-version: 1.0.0
+version: 1.0.1
 application:
   routes:
     - /=http://chinesebqb.shiina.lzcapp.chinesebqb.lzcapp:3000
   subdomain: chinesebqb
 services:
   chinesebqb:
-    image: registry.lazycat.cloud/u12914963/dockerhub02347/chinesebqb:34440ebbf8c19145
+    image: registry.lazycat.cloud/u12914963/dockerhub02347/chinesebqb:f6f177a590fde360
     ports:
       - 3000
