@@ -3,6 +3,7 @@ name: Redis
 package: shiina.lzcapp.redis
 version: 1.0.0
 application:
+  background_task: true
   routes:
     - /=http://redis.shiina.lzcapp.redis.lzcapp:6379
   subdomain: redis
@@ -12,7 +13,7 @@ application:
       service: redis
 services:
   redis:
-    image: registry.lazycat.cloud/u12914963/acgnhiki/blrec:539a20d83ba06d67
+    image: registry.lazycat.cloud/u12914963/library/redis:7f346df9cd82ade3
     container_name: redis
     ports:
       - 6379:6379
