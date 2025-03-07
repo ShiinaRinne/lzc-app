@@ -1,0 +1,29 @@
+lzc-sdk-version: '0.1'
+name: Unity Accelerator
+package: shiina.lzcapp.unity-accelerator
+version: 1.0.0
+usage: 更改配置或查看日志需要使用浏览器打开. 用户名与密码均为 `lazycat` 
+application:
+  background_task: true
+  routes:
+    - /=http://unity-accelerator.shiina.lzcapp.unity-accelerator.lzcapp:80
+  subdomain: unity-accelerator
+  ingress:
+    - protocol: tcp
+      port: 10080
+      service: unity-accelerator
+services:
+  unity-accelerator:
+    image: registry.lazycat.cloud/u12914963/unity/accelerator:6906a17ea88aca78
+    binds:
+      - /lzcapp/var/agent:/agent
+    ports:
+      - 80
+      - 443
+      - 10080
+    environment:
+      - UNITY_ACCELERATOR_PERSIST=/agent
+      - UNITY_ACCELERATOR_LOG_STDOUT=false
+      - USER=lazycat
+      - PASSWORD=lazycat
+
