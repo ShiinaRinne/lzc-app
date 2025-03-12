@@ -2,10 +2,16 @@ lzc-sdk-version: '0.1'
 name: Cloudreve
 package: shiina.lzcapp.cloudreve
 version: 1.0.1
+usage: 在使用本地策略时, 如果需要更改保存路径结构, 最前面需要强制保留 /uploads, 否则数据将不会被持久化保存
 application:
+  background_task: true
   routes:
     - /=http://cloudreve.shiina.lzcapp.cloudreve.lzcapp:5212
   subdomain: cloudreve
+  ingress:
+    - protocol: tcp
+      port: 5212
+      service: cloudreve
 services:
   cloudreve:
     image: registry.lazycat.cloud/u12914963/dockerhub02347/cloudreve:855fc00dc671a745

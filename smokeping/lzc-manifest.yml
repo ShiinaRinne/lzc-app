@@ -4,6 +4,7 @@ name: Smokeping
 package: shiina.lzcapp.smokeping
 version: 1.0.0
 application:
+  background_task: true
   routes:
     - /=http://smokeping.shiina.lzcapp.smokeping.lzcapp:80
   subdomain: smokeping

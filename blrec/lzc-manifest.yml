@@ -3,6 +3,7 @@ name: blrec
 package: shiina.lzcapp.blrec
 version: 1.0.0
 application:
+  background_task: true
   routes:
     - /=http://blrec.shiina.lzcapp.blrec.lzcapp:2233
   subdomain: blrec
@@ -10,6 +11,7 @@ application:
     - protocol: tcp
       port: 2233
       service: blrec
+
 services:
   blrec:
     image: registry.lazycat.cloud/u12914963/acgnhiki/blrec:539a20d83ba06d67

@@ -3,6 +3,7 @@ name: JoplinServer
 package: shiina.lzcapp.joplinserver
 version: 1.0.0
 application:
+  background_task: true
   routes:
     - /=http://joplin.shiina.lzcapp.joplinserver.lzcapp:22300
   subdomain: joplin
