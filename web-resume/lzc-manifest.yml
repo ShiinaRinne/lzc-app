@@ -1,0 +1,15 @@
+lzc-sdk-version: '0.1'
+name: WebResume
+package: shiina.lzcapp.webresume
+version: 1.0.0
+application:
+  routes:
+    - /=http://web-resume.shiina.lzcapp.webresume.lzcapp:3000
+  subdomain: web-resume
+services:
+  web-resume:
+    image: registry.lazycat.cloud/u12914963/dockerhub02347/webresume:996d50f305c5cc5c
+    binds: 
+      - /lzcapp/var/web-resume:/app
+    ports:
+      - 3000
