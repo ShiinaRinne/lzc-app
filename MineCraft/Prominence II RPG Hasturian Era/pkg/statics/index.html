@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的世界 卓越II整合包 - 简易安装指南</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>我的世界 - 卓越II整合包安装指南</h1>
+        
+        <h2>1. 下载整合包</h2>
+        <div class="step">
+            <div class="note">
+                <p><strong>新手推荐：</strong><a href="./resources/client-all.zip">点击这里下载完整整合包</a></p>
+                <p>包含启动器和所有必要文件，解压后打开即可使用，非常方便！</p>
+                <p><strong>进阶用户：</strong><a href="./resources/client.zip">点击这里下载仅包含资源文件的整合包</a></p>
+                <p>适合已安装 PCL 或 HMCL 启动器的玩家，需要手动导入整合包并等待下载资源文件。</p>
+            </div>
+        </div>
+
+        <h2>2. 安装整合包</h2>
+        <div class="step">
+            <h3>完整整合包（新手推荐）</h3>
+            <ol>
+                <li>解压下载的 <code>client-all.zip</code> 文件到任意文件夹</li>
+                <li>双击解压出的启动器程序（如 PCL.exe）</li>
+                <li>等待启动器加载完成</li>
+            </ol>
+            <h3>仅资源文件整合包（进阶用户）</h3>
+            <p>以 PCL 启动器为例：</p>
+            <ol>
+                <li>打开 PCL 启动器</li>
+                <li>点击 "版本选择"</li>
+                <li>选择 "导入整合包"</li>
+                <li>选择下载的 <code>client.zip</code> 文件</li>
+                <li>等待安装完成</li>
+            </ol>
+            <img src="./assets/0.png" alt="选择版本">
+            <img src="./assets/1.png" alt="导入整合包">
+            <img src="./assets/2.png" alt="等待安装">
+        </div>
+
+        <h2>3. 连接服务器</h2>
+        <div class="step">
+            <h3>进入游戏世界</h3>
+            <ol>
+                <li>启动游戏</li>
+                <li>点击 "多人游戏"</li>
+                <li>选择 "直接连接"</li>
+                <li>输入服务器地址：<code id="serverAddress">prominence2.[hostname].heiyu.space</code> <button id="copyButton" class="copy-btn" title="复制到剪贴板">复制</button></li>
+                <li>点击 "加入服务器"</li>
+            </ol>
+            <img src="./assets/3.png" alt="多人游戏">
+            <img src="./assets/4.png" alt="直接连接">
+            <img src="./assets/5.png" alt="输入服务器地址">
+        </div>
+
+        <h2>服务器配置</h2>
+        <div class="step">
+            <h3>修改服务器设置</h3>
+            <p>如需修改服务器配置，请访问以下链接：</p>
+            <p><a id="configLink" href="#" target="_blank">服务器配置文件</a></p>
+            <div class="note">
+                <strong>提示：</strong>
+                <ul>
+                    <li>修改配置后，可能需要重启服务器才能生效。</li>
+                    <li>首次进入服务器时，生成世界可能需要 1-2 分钟，请耐心等待。</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>调试</h2>
+        <div class="step">
+            <h3>查看服务器日志</h3>
+            <p>如需查看服务器日志，请访问以下链接在 dozzle 中查找名为<code>shiina.lzcapp.minecraft.prominence2</code>的容器</p>
+            <p><a id="logLink" href="#" target="_blank">服务器日志查看器</a></p>
+        </div>
+    </div>
+
+    <script>
+        const hostname = window.location.hostname.split('.')[1];
+
+        const serverAddressElement = document.getElementById('serverAddress');
+        serverAddressElement.textContent = `prominence2.${hostname}.heiyu.space`;
+
+        const configLinkElement = document.getElementById('configLink');
+        configLinkElement.href = `https://file.${hostname}.heiyu.space/#/file/appdata?path=/shiina.lzcapp.minecraft.prominence2/data`;
+
+        const logLinkElement = document.getElementById('logLink');
+        logLinkElement.href = `https://dev.${hostname}.heiyu.space/dozzle/container`;
+
+        
+        document.getElementById('copyButton').addEventListener('click', function() {
+            const serverAddress = serverAddressElement.textContent;
+            navigator.clipboard.writeText(serverAddress).then(function() {
+                const originalText = this.textContent;
+                this.textContent = '已复制！';
+                this.classList.add('copied');
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.classList.remove('copied');
+                }, 2000);
+            }.bind(this)).catch(function(err) {
+                console.error('无法复制文本: ', err);
+            });
+        });
+    </script>
+</body>
+</html>
