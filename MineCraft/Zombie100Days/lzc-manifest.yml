@@ -1,0 +1,25 @@
+lzc-sdk-version: '0.1'
+name: 我的世界-僵尸入侵100天
+package: shiina.lzcapp.minecraft.zl100d
+version: 1.0.0
+application:
+  routes:
+    - /=http://zl100d.shiina.lzcapp.minecraft.zl100d.lzcapp:3000
+  subdomain: zl100d
+  ingress:
+    - protocol: tcp
+      port: 25565
+      service: zl100d
+services:
+  zl100d:
+    image: registry.lazycat.cloud/miku/dockerhub02347/mc_zl100d:03f862b9a496eb33
+    binds:
+      - /lzcapp/var/data:/app/data
+    ports:
+      - 25565:25565
+      - 3000:3000
+    setup_script: |
+      mkdir -p /app/data
+      if [ ! -f /app/data/run.sh ]; then
+        cp -r /app/server/* /app/data/
+      fi
