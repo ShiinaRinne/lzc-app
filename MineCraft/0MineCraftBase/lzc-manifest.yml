@@ -1,0 +1,25 @@
+lzc-sdk-version: '0.1'
+name: 我的世界-卓越II
+package: shiina.lzcapp.minecraft.prominence2
+version: 1.0.0
+application:
+  routes:
+    - /=http://prominence2.shiina.lzcapp.minecraft.prominence2.lzcapp:3000
+  subdomain: prominence2
+  ingress:
+    - protocol: tcp
+      port: 25565
+      service: prominence2
+services:
+  prominence2:
+    image: registry.lazycat.cloud/miku/dockerhub02347/mc_prominence2:cf699f61fc4a7de9
+    binds:
+      - /lzcapp/var/data:/app/data
+    ports:
+      - 25565:25565
+      - 3000:3000
+    setup_script: |
+      mkdir -p /app/data
+      if [ ! -f /app/data/run.sh ]; then
+        cp -r /app/server/* /app/data/
+      fi
